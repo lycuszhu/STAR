@@ -1,0 +1,11 @@
+# cuda >= 12.6, for RTX50xx GPUs, cuda use 12.8
+--extra-index-url https://download.pytorch.org/whl/cu128
+
+numpy>=1.26,<2.0
+pandas>=2.0
+scikit-learn>=1.3
+numba>=0.59
+sktime>=0.22
+torch==2.4.1
+matplotlib>=3.7
+tqdm>=4.65
