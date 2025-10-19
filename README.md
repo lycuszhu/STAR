@@ -2,9 +2,9 @@
 
 # STAR: Shapelet-Temporal trAnsformeR
 
-**STAR** comprises two transformer encoders that operate on complementary tokenisations of the input. 
+**STAR** is designed for multivariate time series classification. It comprises two transformer encoders that operate on complementary tokenisations of the input. 
 
-The first is a *shapelet encoder*: we build a shapelet bank with per-variable FAST application, compute zero-normalised cross-correlation activation trajectories, align them on a common time grid, and project the resulting activation matrix into a token sequence with learned positional encodings before transformer encoding. 
+The first is a *shapelet encoder*: we build a shapelet bank with per-variable **FAST** ([repo](https://github.com/lycuszhu/FAST)) application, compute zero-normalised cross-correlation activation trajectories, align them on a common time grid, and project the resulting activation matrix into a token sequence with learned positional encodings before transformer encoding. 
 
 The second is a *generic encoder* that forms tokens directly from the raw multivariate series using a lightweight convolutional front-end and a transformer to supply generic temporal context. The two sequence representations are pooled and fused before classification. 
 Figure below summarised the overall architecture of STAR. 
@@ -33,6 +33,10 @@ python -m main \
     --include_max 0 --k369 1 --kernel_budget_total 50000 --top_k_per_var 100 \
     --threads 20 --use_val 1 --val_frac 0.2 --early_stop_patience 5 --early_stop_min_delta 1e-4
 ```
+
+## See also
+- **FAST** — Feature mAp-induced Shapelet Transform  
+  https://github.com/your-org/FAST
 
 
 
